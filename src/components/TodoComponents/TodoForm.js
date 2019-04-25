@@ -22,6 +22,7 @@ class TodoForm extends Component {
       })
     }
 
+
   render() {
 
  
@@ -29,7 +30,9 @@ class TodoForm extends Component {
       <div>
           <form onSubmit={this.handleSubmit}>
               <label>Enter a task</label>
-              <input type="text" placeholder="task" onChange={this.handleChange} value={this.state.task}/>
+              <input type="text" placeholder="task" 
+                     onChange={this.handleChange} 
+                     value={this.state.task}/>
               <button>Add Todo</button>
           </form>
       </div>

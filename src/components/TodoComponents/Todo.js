@@ -48,11 +48,21 @@ class Todo extends Component {
        })
     }
 
+    removeTodo = () => {
+      const removeMe = this.state.todos.filter(item => {
+          return !item.completed 
+      })
+      this.setState({
+           todos: removeMe
+      })
+    }
+
   render() {
     return (
       <div>
           <TodoList todos={this.state.todos} setStatus={this.setStatus}/>
-          <TodoForm addTodo={this.addTodo}/>
+          <TodoForm addTodo={this.addTodo} removeTodo={this.removeTodo}/>
+          <button onClick={this.removeTodo}>Remove</button>
       </div>
     )
   }
