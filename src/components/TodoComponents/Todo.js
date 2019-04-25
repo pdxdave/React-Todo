@@ -18,8 +18,9 @@ class Todo extends Component {
               completed: false
             }
           ]
+          
     }
-
+    
     addTodo = (todo) => {
       todo.id = uuid();
       const todos = [...this.state.todos, todo];
@@ -28,24 +29,21 @@ class Todo extends Component {
       })
     }
 
-    setStatus = (completed) => {
-        
-     const test = completed;
-
-       this.setState({
-           completed: !test
+    setStatus = (id) => {
+       this.setState(prevState => {
+           return {
+               todos: prevState.todos.map(todo => {
+                   if(todo.id === id){
+                       return {
+                           ...todo,
+                           completed: !todo.completed
+                       };
+                   }else{
+                       return todo
+                   }
+               })
+           }
        })
-    //   const todos = this.state.todos.filter(todo => {
-    //       if(todo.id === id){
-    //           return todo.completed = true;
-    //       }
-    //   })
-
-    //   this.setState({
-    //       todos: todos
-    //   })
-      console.log(this.state)
-     
     }
 
   render() {
