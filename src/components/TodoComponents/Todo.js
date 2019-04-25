@@ -3,6 +3,8 @@ import TodoList from './TodoList';
 import TodoForm from './TodoForm';
 import uuid from 'uuid';
 
+import './Todo.css';
+
 class Todo extends Component {
 
     state = {

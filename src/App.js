@@ -1,6 +1,8 @@
 import React from 'react';
 import Todo from './components/TodoComponents/Todo';
 
+import './components/TodoComponents/Todo.css'
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.

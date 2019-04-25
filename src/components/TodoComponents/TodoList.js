@@ -6,15 +6,21 @@ import './Todo.css'
 
 const TodoList = ({todos,setStatus}) => {
    
-    let strike = todos.completed ? 'strike' : ''
+    // let strike = todos.completed ? "strike" : " "
     
     const todosList = todos.length ? (
 
         todos.map(todo => {
             return (
-                <div key={todo.id} className={`${strike}`}>
-                     <p onClick={() => {setStatus(todo.id)}} >{todo.task}</p>  
+
+                <div key={todo.id}  >
+                     <p onClick={() => {setStatus(todo.id)}}  className={todo.completed ? 'strike' : ''}>{todo.task}</p>  
                 </div>
+
+
+                //  <div key={todo.id} className={`${strike}`} >
+                //     <p onClick={() => {setStatus(todo.id)}} className="test">{todo.task}</p>  
+                // </div>
             )
         })
     ) : (
